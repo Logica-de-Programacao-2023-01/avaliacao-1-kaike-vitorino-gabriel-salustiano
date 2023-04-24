@@ -13,6 +13,17 @@ package q2
 //Ajude os amigos a encontrar o número de problemas para os quais eles escreverão uma solução.
 
 func ProblemsSolved(answers [][3]bool) int {
-	// Seu código aqui
-	return 0
+	NumCorretas := 0
+	for _, RangResps := range answers {
+		sum := 0
+		for _, SolucaoTru := range RangResps {
+			if SolucaoTru {
+				sum++
+			}
+		}
+		if sum >= 2 {
+			NumCorretas++
+		}
+	}
+	return NumCorretas
 }
